@@ -27,11 +27,10 @@ app.get('/registration',function(req,res){
   res.render('registration');
 });
 
-app.get('/home',function(req,res){
-res.render('home')
-});
-
-
+// app.get('/home',function(req,res){
+// res.render('home')
+// });
+      
 app.get('/islands',function(req,res){
   res.render('islands');
     });
@@ -41,7 +40,15 @@ app.get('/cities',function(req,res){
 app.get('/hiking',function(req,res){
    res.render('hiking');
     })
-
+    app.get('/wanttogo',function(req,res){
+      res.render('wanttogo');
+    })
+      app.get('/wanttogo',function(req,res){
+      res.render('wanttogo');
+    })
+      app.get('/inca',function(req,res){
+      res.render('inca');
+    })
 //LOGIN
 
 app.post('/login',function(req,res){
@@ -65,9 +72,13 @@ app.post('/login',function(req,res){
   }
   if (flag == false)
   {
+    
     alert("Wrong username or password");
    
     res.render('login');
+    
+
+
   }
   else{
   session["username"]=username;
@@ -101,6 +112,8 @@ app.post('/login',function(req,res){
     session["username"]=username;
     alert("Register Successful")
       res.render('home'); 
+
+
     }
     else{
       alert("Username already exists");
